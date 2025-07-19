@@ -50,7 +50,7 @@ statusline.setup {
 		theme = 'auto',
 		globalstatus = true, --Don't know how I feel about that
 		disabled_filetypes = {'prompt', 'ministarter'},
-		ignore_focus = {'quickfix', 'minipick'},
+		ignore_focus = {'quickfix', 'minipick', 'harpoon'},
 		section_separators = {
 			left = '',
 			right = ''

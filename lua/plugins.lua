@@ -59,8 +59,8 @@ add_plugin({
 	depends = {
 		'mfussenegger/nvim-dap',
 		--'jay-babu/mason-nvim-dap.nvim', --I can't get this to work
+		'nvim-neotest/nvim-nio',
 		'leoluz/nvim-dap-go',
-		'nvim-neotest/nvim-nio'
 	}
 })
 require('language-tools.debugger')
@@ -68,10 +68,3 @@ require('language-tools.debugger')
 -- THEMES
 add_plugin({source = 'zaldih/themery.nvim'})
 require('interface.themes')
-
--- TODO: Tweak file explorer / picker options & keymaps
--- TODO: Configure Debugger and Debugger keybinds
--- TODO: Persistant theme switching 
-				 -- maybe do a custom implementation
-				 -- maybe tweak the theme selection
-				 -- custom theme (lush.nvim, mini colors / hue, etc)

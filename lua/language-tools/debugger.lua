@@ -39,18 +39,18 @@ dap.listeners.before.event_exited.dapui_config = function()
   dap_ui.close()
 end
 
--- Basic debugging keymaps
-vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-vim.keymap.set('n', '<leader>dD', dap.continue, { desc = 'Debug: Start' })
-vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-vim.keymap.set('n', '<leader>dB', function()
-	dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-end, { desc = 'Debug: Set Breakpoint' })
+-- Debugger Functionality
+ToggleBreakpoint = dap.toggle_breakpoint
+SetConditionalBreakpoint = function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end
+DebugContinue = dap.continue
+DebugStepInto = dap.step_into
+DebugStepOver = dap.step_over
+DebugStepOut = dap.step_out
+DebugStepBack = dap.step_back -- Idk if most debuggers support this?
+
+-- Things to look at
+-- dap.run_to_cursor
 -- Also dap_ui.toggle() function to toggle the UI on or off
--- TODO: Keymaps...
 
 -- Setup for individual debuggers
 require('dap-go').setup()

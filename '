@@ -6,13 +6,12 @@ MiniExtra.setup()
 MiniPick.setup({
 	mappings = {
 		choose_in_vsplit = '<C-s>', -- Vertical split
-		paste = '<C-p>',
+		paste = '<C-v>',
 		scroll_down = '<C-j>',
 		scroll_up = '<C-k>',
 		scroll_left = '<C-h>',
 		scroll_right = '<C-l>',
-		refine = '<C-Space>',
-		delete_left = '<C-BS>',
+		refine = '<C-Space>'
 
 		--Disable
 		choose_in_split = '', -- Horizontal split
@@ -21,6 +20,11 @@ MiniPick.setup({
 		refine_marked = '',
 		mark = '',
 		mark_all = '',
+		-- toggle_info = '',
+		-- toggle_preview = '',
+		-- move_down = '',
+		-- move_up = '',
+		-- stop = '<C-q>'
 	}
 })
 

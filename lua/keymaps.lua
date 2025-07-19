@@ -1,4 +1,4 @@
---NOTE: Some keybinds are part of their plugin config (i.e. autocomplete, file explorer, debugger)
+--NOTE: Some keybinds are part of their plugin config (i.e. autocomplete, file explorer, pickers)
 
 -- alias for setting keybinds
 local map = vim.keymap.set
@@ -48,10 +48,19 @@ map('n', 'gT', GoToTypeDefinition, {desc = "Goto Type Definition"})
 map('n', '<leader>le', vim.diagnostic.setloclist, { desc = ' Show All Errors'})
 map('n', '<leader>e', OpenFloatingDiagnostic, {desc = ' Show Error'})
 
+-- Debugger
+vim.keymap.set('n', '<leader>dD', DebugContinue, { desc = 'Debug Start / Continue' })
+vim.keymap.set('n', '<leader>db', ToggleBreakpoint, { desc = 'Toggle Breakpoint' })
+vim.keymap.set('n', '<leader>dB', SetConditionalBreakpoint, { desc = 'Set Conditional Breakpoint' })
+vim.keymap.set('n', '<F5>', DebugContinue, { desc = 'Debug: Start/Continue' })
+vim.keymap.set('n', '<F1>', DebugStepInto, { desc = 'Debug: Step Into' })
+vim.keymap.set('n', '<F2>', DebugStepOver, { desc = 'Debug: Step Over' })
+vim.keymap.set('n', '<F3>', DebugStepOut, { desc = 'Debug: Step Out' })
+
 -- MISC
 map('n', '<leader>T', ':Themery<Enter>', {desc = " Change Theme"})
 
--- Ctrl-backspace in to delete a word (Ctrl-w in insert mode deletes a word)
+-- Ctrl-backspace in insert mode to delete a word (Ctrl-w in insert mode deletes a word)
 map('i','<C-BS>','<C-w>')
 -- Some terminals map BS to Ctrl-H
 map('i','<C-H>','<C-w>')
