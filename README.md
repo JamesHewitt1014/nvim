@@ -2,7 +2,7 @@
 
 `git clone https://github.com/JamesHewitt1014/nvim.git ~/.config/nvim`
 
-**Dependencies (Installed utilities)**
+**Dependencies**
 
 * Ripgrep is an optional dependency (required for search)
 * Fd is an optional dependency (required for fuzzy file searching)
