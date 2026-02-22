@@ -2,12 +2,6 @@
 -- nvim-lspconfig provides default configurations between various LSPs and the Nvim LSP Client
 -- Mason is a language tools package manager (i.e. installs LSPs)
 -- Mason-lspconfig connects nvim-lspconfig with Mason - allowing Mason to both install and enable/setup an LSP in nvim 
--- Not all Language Servers are available in the Mason registry, as such, below is an example of how to configure lsp-config manually (in Nvim 0.11+)
--- vim.lsp.config('<LSP_NAME>', {
-	-- settings = {
-		-- ['<LSP_NAME>'] = {},
-	-- }
--- })
 
 require("mason").setup({
 	registries = {
@@ -22,19 +16,26 @@ require("mason-lspconfig").setup({
 		"ts_ls", -- Typescript, also covers JS and React (JSX/TSX) and limited JSON support
 		"cssls",
 		"html",
+		"gopls"
 	},
 })
 
 -- Language server support for neovim config and plugin development
 require('lazydev').setup()
 
---NOTE: CSharp Language Server Options
--- csharp_ls (csharp language server) - available on Mason but lacking in features
--- Roslyn - The MS VSCode C# Extension LSP
--- Roslyn can be connected through lsp-config or by the roslyn.nvim plugin which enables additional features (Also rzls.nvim if razor support is required)
--- Will error if correct dotnet version isn't installed
--- local add_plugin = MiniDeps.add
--- add_plugin({source='seblyng/roslyn.nvim'})
--- require('roslyn').setup({
--- 	broad_search = false,
+-- GO Enable SemanticTokens
+-- vim.lsp.config('gopls', {
+-- 	settings = {
+-- 		gopls = {
+-- 			semanticTokens = true,
+-- 		},
+-- 	}
+-- })
+
+-- NOTE --
+-- Not all Language Servers are available in the Mason registry, as such, below is an example of how to configure lsp-config manually (in Nvim 0.11+)
+-- vim.lsp.config('<LSP_NAME>', {
+-- 	settings = {
+-- 		['<LSP_NAME>'] = {},
+-- 	}
 -- })
